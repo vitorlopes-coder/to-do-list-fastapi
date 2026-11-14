@@ -2,9 +2,10 @@ from collections.abc import Sequence
 from datetime import datetime
 from typing import Protocol
 
-from models.tarefa import Tarefa
-from schemas.tarefa import TarefaBD
+from app.models.tarefa import Tarefa
+from app.schemas.tarefa import TarefaBD
 
+# Assinatura
 
 class TaskRepository(Protocol):
     def list(self) -> Sequence[TarefaBD]: ...
@@ -15,6 +16,7 @@ class TaskRepository(Protocol):
 
     def delete(self, tarefa_id: int) -> bool: ...
 
+# Criação da classe
 
 class InMemoryTaskRepository:
     def __init__(self) -> None:

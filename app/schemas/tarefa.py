@@ -1,4 +1,4 @@
-from models.tarefa import Tarefa
+from app.models.tarefa import Tarefa
 
 class TarefaBD(Tarefa):
     id: int

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from routers.tarefa_route import router as tarefa_router
+from app.routers.tarefa_route import router as tarefa_router
 
 app = FastAPI()
 
