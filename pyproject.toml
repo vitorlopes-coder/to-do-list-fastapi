@@ -8,11 +8,14 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "anyio>=4.16.0",
     "fastapi[standard]>=0.141.1",
+    "starlette>=1.10.0",
 ]
 
 [dependency-groups]
 dev = [
+    "httpx2>=2.16.0",
     "pytest>=8.0.0",
 ]
 
@@ -24,4 +27,4 @@ build-backend = "uv_build"
 package = false
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["."]
