@@ -21,8 +21,11 @@ Guia de estudos: Fixtures e o arquivo conftest.py no Pytest
 
 import pytest
 from fastapi.testclient import TestClient
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 from app.main import app
+from app.models.tarefa_orm import table_registry
 
 
 @pytest.fixture
@@ -35,4 +38,16 @@ def client():
 def cliente(client):
     """Alias(apelido) em português para a fixture 'client'."""
     return client
+
+
+@pytest.fixture
+def session():
+    """Cria um banco SQLite em memória isolado para cada teste."""
+    engine = create_engine("sqlite:///:memory:")
+    table_registry.metadata.create_all(engine)
+
+    with Session(engine) as session:
+        yield session
+
+    table_registry.metadata.drop_all(engine)
 
