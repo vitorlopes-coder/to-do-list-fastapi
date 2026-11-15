@@ -4,8 +4,8 @@ from fastapi import APIRouter, Depends, HTTPException
 
 from app.db.dependencies import get_task_repository
 from app.db.repository import TaskRepository
-from app.models.tarefa import Tarefa
-from app.schemas.tarefa import TarefaBD
+from app.models.tarefa import TarefaBD
+from app.schemas.tarefa import Tarefa
 
 router = APIRouter()
 # Annotated: Guardando anotado ( variavel + metadado ) que esse tipo interface TaskRepository tem um metadado get_task_repository() instância que respeita seu contrato 

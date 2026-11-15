@@ -25,7 +25,7 @@ from http import HTTPStatus
 from app.db.dependencies import get_task_repository
 from app.db.repository import InMemoryTaskRepository
 from app.main import app
-from app.models.tarefa import Tarefa
+from app.schemas.tarefa import Tarefa
 
 # def test_home(client):
 #     # A - Arrange

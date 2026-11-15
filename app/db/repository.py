@@ -2,8 +2,8 @@ from collections.abc import Sequence
 from datetime import datetime
 from typing import Protocol
 
-from app.models.tarefa import Tarefa
-from app.schemas.tarefa import TarefaBD
+from app.models.tarefa import TarefaBD
+from app.schemas.tarefa import Tarefa
 
 # Assinatura
 

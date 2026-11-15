@@ -1,6 +1,8 @@
-from app.models.tarefa import Tarefa
+from pydantic import BaseModel
 
-class TarefaBD(Tarefa):
-    id: int
-    data_criacao: str
-    data_atualizacao: str
+
+class Tarefa(BaseModel):
+    titulo: str
+    descricao: str
+    concluida: bool
+    tags: list[str]
